@@ -1,65 +1,58 @@
-import Image from "next/image";
+import { Hero } from "@/components/ui/Hero";
+import { VideoGrid } from "@/components/ui/VideoGrid";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="flex flex-col min-h-screen">
+      {/* Hero Section */}
+      <Hero />
+
+      {/* About Brief */}
+      <section className="py-24 px-6 bg-neutral-950 text-center">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-neutral-100">
+            We are filmmakers for the digital age.
+          </h2>
+          <p className="text-xl text-neutral-400 leading-relaxed">
+            MC PRIME combines traditional cinematic techniques with cutting-edge AI technology to create visual content that doesn't just look good—it performs. From high-energy commercials to emotional brand stories, we handle it all.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Portfolio */}
+      <VideoGrid />
+
+      {/* Services Brief */}
+      <section className="py-24 px-6 bg-neutral-50/5 dark:bg-neutral-900">
+        <div className="container mx-auto">
+          <h2 className="text-4xl font-bold mb-16 text-center">Our Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { title: "Commercial Production", desc: "TV and Social Media ads that convert." },
+              { title: "AI-Enhanced Video", desc: "Generative AI video content for rapid conceptualization." },
+              { title: "Brand Documentary", desc: "Long-form storytelling for brand identity." }
+            ].map((s, i) => (
+              <div key={i} className="p-8 border border-neutral-800 rounded-2xl hover:bg-neutral-800/50 transition-colors">
+                <h3 className="text-2xl font-bold mb-4">{s.title}</h3>
+                <p className="text-neutral-400">{s.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="py-20 text-center">
+        <h2 className="text-4xl font-bold mb-6">Ready to create?</h2>
+        <a href="/contact" className="inline-block bg-white text-black px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform">
+          Start a Project
+        </a>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-10 border-t border-neutral-800 text-center text-neutral-500">
+        <p>&copy; {new Date().getFullYear()} MC PRIME. All rights reserved.</p>
+      </footer>
     </div>
   );
 }
