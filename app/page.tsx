@@ -1,11 +1,19 @@
+import { HeroVideoSection } from "@/components/HeroVideoSection";
+import { BentoGridSection } from "@/components/BentoGridSection";
 import { HeroSection } from "@/components/hero-section";
 import { VideoGrid } from "@/components/ui/VideoGrid";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <HeroSection />
+      {/* New Cinematic Hero Video Section */}
+      <HeroVideoSection />
+
+      {/* Bento Grid Features */}
+      <BentoGridSection />
+
+      {/* Old Hero Section (Moved Down) */}
+      {/* <HeroSection /> */}
 
       {/* About Brief */}
       <section className="py-24 px-6 bg-neutral-950 text-center">
