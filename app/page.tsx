@@ -1,5 +1,6 @@
 import { HeroVideoSection } from "@/components/HeroVideoSection";
 import { BentoGridSection } from "@/components/BentoGridSection";
+import { InteractiveHoverLinks } from "@/components/ui/interactive-hover-links";
 import { HeroSection } from "@/components/hero-section";
 import { VideoGrid } from "@/components/ui/VideoGrid";
 
@@ -12,11 +13,14 @@ export default function Home() {
       {/* Bento Grid Features */}
       <BentoGridSection />
 
+      {/* Navigation Links */}
+      <InteractiveHoverLinks />
+
       {/* Old Hero Section (Moved Down) */}
       {/* <HeroSection /> */}
 
       {/* About Brief */}
-      <section className="py-24 px-6 bg-neutral-950 text-center">
+      {/* <section className="py-24 px-6 bg-neutral-950 text-center">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-neutral-100">
             We are filmmakers for the digital age.
@@ -25,13 +29,13 @@ export default function Home() {
             MC PRIME combines traditional cinematic techniques with cutting-edge AI technology to create visual content that doesn't just look good—it performs. From high-energy commercials to emotional brand stories, we handle it all.
           </p>
         </div>
-      </section>
+      </section> */}
 
       {/* Portfolio */}
-      <VideoGrid />
+      {/* <VideoGrid /> */}
 
       {/* Services Brief */}
-      <section className="py-24 px-6 bg-neutral-50/5 dark:bg-neutral-900">
+      {/* <section className="py-24 px-6 bg-neutral-50/5 dark:bg-neutral-900">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold mb-16 text-center">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -47,15 +51,15 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Contact CTA */}
-      <section className="py-20 text-center">
+      {/* <section className="py-20 text-center">
         <h2 className="text-4xl font-bold mb-6">Ready to create?</h2>
         <a href="/contact" className="inline-block bg-white text-black px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform">
           Start a Project
         </a>
-      </section>
+      </section> */}
 
       {/* Footer */}
       <footer className="py-10 border-t border-neutral-800 text-center text-neutral-500">
