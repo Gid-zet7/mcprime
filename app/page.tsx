@@ -1,11 +1,11 @@
-import { Hero } from "@/components/ui/Hero";
+import { HeroSection } from "@/components/hero-section";
 import { VideoGrid } from "@/components/ui/VideoGrid";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <Hero />
+      <HeroSection />
 
       {/* About Brief */}
       <section className="py-24 px-6 bg-neutral-950 text-center">
