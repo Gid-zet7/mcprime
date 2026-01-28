@@ -32,7 +32,7 @@ export function HeroVideoSection() {
                     poster="/images/hero-poster.jpg" // Placeholder poster
                 >
                     {/* Placeholder video - Replace with your actual asset */}
-                    <source src="/videos/hero-background.mp4" type="video/mp4" />
+                    <source src="/vexorin.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
 

@@ -1,6 +1,4 @@
-import { Play, film, Zap, Globe, Cpu } from 'lucide-react';
-// Note: 'film' is not a valid lucide export, usually it is Film. I will double check imports.
-import { Film, Aperture, Music, PenTool } from 'lucide-react';
+import { Film, Zap, Globe, Cpu, Aperture, Music } from 'lucide-react';
 
 export default function ServicesPage() {
     const services = [

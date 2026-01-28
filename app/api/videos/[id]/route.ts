@@ -5,25 +5,27 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { deleteFileFromS3 } from '@/lib/s3';
 
-export async function GET(req: Request, { params }: { params: { id: string } }) {
+export async function GET(req: Request, { params }: { params: Promise<{ id: string }> }) {
     await connectDB();
-    const video = await Video.findById(params.id);
+    const { id } = await params;
+    const video = await Video.findById(id);
     if (!video) {
         return NextResponse.json({ error: 'Video not found' }, { status: 404 });
     }
     return NextResponse.json(video);
 }
 
-export async function PUT(req: Request, { params }: { params: { id: string } }) {
+export async function PUT(req: Request, { params }: { params: Promise<{ id: string }> }) {
     const session = await getServerSession(authOptions);
     if (!session || (session.user as any).role !== 'admin') {
         return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
     await connectDB();
+    const { id } = await params;
     try {
         const body = await req.json();
-        const video = await Video.findByIdAndUpdate(params.id, body, {
+        const video = await Video.findByIdAndUpdate(id, body, {
             new: true,
             runValidators: true,
         });
@@ -36,15 +38,16 @@ export async function PUT(req: Request, { params }: { params: { id: string } }) 
     }
 }
 
-export async function DELETE(req: Request, { params }: { params: { id: string } }) {
+export async function DELETE(req: Request, { params }: { params: Promise<{ id: string }> }) {
     const session = await getServerSession(authOptions);
     if (!session || (session.user as any).role !== 'admin') {
         return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
     await connectDB();
+    const { id } = await params;
     try {
-        const video = await Video.findById(params.id);
+        const video = await Video.findById(id);
         if (!video) {
             return NextResponse.json({ error: 'Video not found' }, { status: 404 });
         }

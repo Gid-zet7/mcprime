@@ -3,6 +3,8 @@ import { BentoGridSection } from "@/components/BentoGridSection";
 import { InteractiveHoverLinks } from "@/components/ui/interactive-hover-links";
 import { HeroSection } from "@/components/hero-section";
 import { VideoGrid } from "@/components/ui/VideoGrid";
+import { TestimonialsSection } from "@/components/ui/testimonial-v2";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -12,6 +14,9 @@ export default function Home() {
 
       {/* Bento Grid Features */}
       <BentoGridSection />
+
+      {/* Testimonials */}
+      <TestimonialsSection />
 
       {/* Navigation Links */}
       <InteractiveHoverLinks />
@@ -62,9 +67,8 @@ export default function Home() {
       </section> */}
 
       {/* Footer */}
-      <footer className="py-10 border-t border-neutral-800 text-center text-neutral-500">
-        <p>&copy; {new Date().getFullYear()} MC PRIME. All rights reserved.</p>
-      </footer>
+      {/* Creative Footer */}
+      <Footer />
     </div>
   );
 }
